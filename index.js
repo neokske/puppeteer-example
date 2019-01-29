@@ -8,6 +8,7 @@ const puppeteer = require("puppeteer");
   await page.keyboard.type("javascript");
   await page.keyboard.press("Enter");
   await page.waitForNavigation({ waitUntil: "networkidle2" });
+  console.log("Current page:", page.url());
 
   if (headless) {
     await page.screenshot({ path: "example.png" });
